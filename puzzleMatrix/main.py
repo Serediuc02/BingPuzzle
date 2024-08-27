@@ -11,35 +11,27 @@ def MoveToTile(pos):
         case '1':
             img1 = pyautogui.locateOnScreen(r"Poze\1.PNG", confidence=0.8)
             pyautogui.moveTo(pyautogui.center(img1), duration=0.5)
-            print("1")
         case '2':
             img1 = pyautogui.locateOnScreen(r"Poze\2.PNG", confidence=0.68, grayscale=True)
             pyautogui.moveTo(pyautogui.center(img1), duration=0.5)
-            print("2")
         case '3':
             img1 = pyautogui.locateOnScreen(r"Poze\3.PNG", confidence=0.78, grayscale=True)
             pyautogui.moveTo(pyautogui.center(img1), duration=0.5)
-            print("3")
         case '4':
             img1 = pyautogui.locateOnScreen(r"Poze\4.PNG", confidence=0.8)
             pyautogui.moveTo(pyautogui.center(img1), duration=0.5)
-            print("4")
         case '5':
             img1 = pyautogui.locateOnScreen(r"Poze\5.PNG", confidence=0.78, grayscale=True)
             pyautogui.moveTo(pyautogui.center(img1), duration=0.5)
-            print("5")
         case '6':
             img1 = pyautogui.locateOnScreen(r"Poze\6.PNG", confidence=0.70, grayscale=True)
             pyautogui.moveTo(pyautogui.center(img1), duration=0.5)
-            print("6")
         case '7':
             img1 = pyautogui.locateOnScreen(r"Poze\7.PNG", confidence=0.76)
             pyautogui.moveTo(pyautogui.center(img1), duration=0.5)
-            print("7")
         case '8':
             img1 = pyautogui.locateOnScreen(r"Poze\8.PNG", confidence=0.75, grayscale=True)
             pyautogui.moveTo(pyautogui.center(img1), duration=0.5)
-            print("8")
 
 def modifice_lista(lst):
     result = []
@@ -149,28 +141,28 @@ def apply_moves(initial_state, moves):
     for move in moves:
         if move == 'up':
             new_r, new_c = empty_r - 1, empty_c
-            print("new r:",new_r,"new_c:",new_c)
-            print(state[new_r][new_c])
+            # print("new r:",new_r,"new_c:",new_c)
+            # print(state[new_r][new_c])
             MoveToTile(state[new_r][new_c])
             pyautogui.click()
         elif move == 'down':
             new_r, new_c = empty_r + 1, empty_c
-            print("new r:", new_r, "new_c:", new_c)
-            print(state[new_r][new_c])
+            # print("new r:", new_r, "new_c:", new_c)
+            # print(state[new_r][new_c])
             MoveToTile(state[new_r][new_c])
             pyautogui.click()
 
         elif move == 'left':
             new_r, new_c = empty_r, empty_c - 1
-            print("new r:", new_r, "new_c:", new_c)
-            print(state[new_r][new_c])
+            # print("new r:", new_r, "new_c:", new_c)
+            # print(state[new_r][new_c])
             MoveToTile(state[new_r][new_c])
             pyautogui.click()
 
         elif move == 'right':
             new_r, new_c = empty_r, empty_c + 1
-            print("new r:", new_r, "new_c:", new_c)
-            print(state[new_r][new_c])
+            # print("new r:", new_r, "new_c:", new_c)
+            # print(state[new_r][new_c])
             MoveToTile(state[new_r][new_c])
             pyautogui.click()
 
@@ -182,10 +174,10 @@ def apply_moves(initial_state, moves):
             state[empty_r][empty_c], state[new_r][new_c] = state[new_r][new_c], state[empty_r][empty_c]
             empty_r, empty_c = new_r, new_c
 
-        # Afișează starea curentă
-        for row in state:
-            print(row)
-        print("------------------------------")
+        # # Afișează starea curentă
+        # for row in state:
+        #     print(row)
+        # print("------------------------------")
 
     return state
 
@@ -304,6 +296,7 @@ print(solutie)
 final_state = apply_moves(tile_matrix, solutie)
 
 
-
+time.sleep(5)# sa poti admira rezultatul
 # Închide browser-ul
+
 driver.quit()
