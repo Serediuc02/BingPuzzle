@@ -1,14 +1,9 @@
-from pyautogui import onScreen, moveTo
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 import pyautogui
-import pyscreeze
 import time
 from PIL import Image, ImageEnhance, ImageFilter
 import heapq
-import pytesseract
-from pytesseract import Output
-import cv2
 
 
 def MoveToTile(pos):
