@@ -189,7 +189,6 @@ def apply_moves(initial_state, moves):
 
     return state
 
-
 def MoveTo_1():
     img1 = pyautogui.locateOnScreen(r"Poze\1.PNG", confidence=0.8)
     pyautogui.moveTo(pyautogui.center(img1), duration=0.5)
@@ -264,7 +263,7 @@ setDef = pyautogui.locateOnScreen(r"Poze\SetAsDefault.png")
 pyautogui.click(pyautogui.moveTo(pyautogui.center(setDef), duration=1))
 pyautogui.hotkey('winleft', 'up') #fullscreen
 pyautogui.hotkey('ctrl', '+') #zoom in
-time.sleep(5) #nu stiu inca daca sa il tin
+time.sleep(2) #nu stiu inca daca sa il tin
 
 # Găsește toate elementele tile
 tiles = driver.find_elements(By.CLASS_NAME, 'tile')
